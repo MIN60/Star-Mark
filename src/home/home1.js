@@ -1,6 +1,7 @@
+/*
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
-import './Login.css';
+import './home.css';
 import axios from 'axios';
 import TextField from '@mui/material/TextField';
 
@@ -56,7 +57,7 @@ const Home = () => {
 
 
     return (
-        <div className='homepage2'>
+        <div className='homepage'>
             <div className='login'>
                 <table className='loginTable'>
                     <tbody>
@@ -95,3 +96,4 @@ const Home = () => {
 }
 
 export default Home;
+*/

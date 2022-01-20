@@ -8,9 +8,10 @@
 }
 
 
-.homepage{
-    background-image: url('/public/img/main.png'); 
+.homepage2{
+    background-image: url('/public/img/login.png'); 
     height: 100vh;
+    background-size: cover;
 
 }
 
