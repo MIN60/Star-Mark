@@ -1,0 +1,63 @@
+.titleWrap{
+    display: inline-block;
+    float: left;
+    margin-left: 5vw;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+.WriteReviewTitle{
+    text-align: left;
+    height: 50px;
+    width: 50vw;
+    border: none;
+    font-family: 'NEXON Lv1 Gothic OTF';
+    border-bottom: solid 1px;
+    font-size: 22px;
+    padding: 10px;
+    border-color: #6667AB;
+}
+
+.makeStyles-cardBack-2{
+    height: 70px;
+}
+
+.MuiCardContent-root{
+    padding: 10px !important;
+}
+
+.theaterInfo{
+    float: right;
+    display: inline-block;
+    width: 20vw;
+    margin-right: 5vw;
+    margin-top: 10px;
+    border-color: #6667AB;
+    padding:5px;
+}
+
+.ReviewWritingArea {
+    text-align: left;
+    border: 1px solid;
+    background-color: white;
+    margin-top: 30px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    padding: 10px;
+    height: 55vh;
+    width: 90vw;
+    border-radius: 5px;
+    border-color: #6667AB;
+    font-family: 'NEXON Lv1 Gothic OTF';
+    font-size: 20px;
+}
+
+#reviewSubmit{
+    height: 50px;
+    width: 50px;
+}
+
+.bodycolor{
+    padding:5px;
+    font-family: 'NEXON Lv1 Gothic OTF';
+}

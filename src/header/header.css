@@ -1,0 +1,57 @@
+.header{
+    background-color: #6667AB;
+    margin-left: 0px;
+    height: 12vh;
+    padding: 3vh;
+}
+
+.title{
+    display: inline-block;
+    margin-right: 0;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.mybtnwrap{
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+}
+
+.mybtn{
+    float: right;
+    margin-right: 30px;
+    margin-top: 10px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+}
+
+.mybtn:hover{
+    color: white;
+}
+
+.titletext{
+    margin:0;
+    text-align: center;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+    text-decoration-line: none;
+    margin-left: 180px;
+}
+
+.css-2s90m6-MuiAvatar-root{
+    margin-right:15px;
+}
+
+.css-i4bv87-MuiSvgIcon-root{
+    margin-top: 12px;
+}
+
+.circle{
+    padding: 75px 0px; 
+    background-color: #2196F3; 
+    border-radius: 50%; 
+    text-align: center; 
+    color: #BBDEFB;
+}
