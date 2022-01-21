@@ -3,10 +3,21 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
+import Switch from '@mui/material/Switch';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Button from '@mui/material/Button';
 
 axios.defaults.withCredentials = true;
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
+
+const label = { inputProps: { 'aria-label': 'Switch demo' } }
+
+
+function ChangeSignup(){
+    window.location.href="/SignUp";
+}
 
 const Home = () => {
   const [cursorX, setCursorX] = useState();
@@ -53,14 +64,26 @@ const Home = () => {
     <div className="homepage2">
       <div className="login">
         <p className="homeText">Welcome Back! </p>
+        
+        <div>
+            <FormControlLabel
+            className="signupbtn"
+            value="start"
+            control={<Switch color="primary" onChange={ChangeSignup}/>}
+            label="SignUp"
+            labelPlacement="start"
+            />
+
+        </div>
         <table className="loginTable">
           <tbody>
             <tr>
               <td className="tableItem">
-                <p className="homeText">ID:</p>
+                <p className="homeText">EMAIL:</p>
               </td>
               <td className="tableItem">
                 <TextField
+                  className="loginField"
                   type="text"
                   name="id"
                   id="standard-basic"
@@ -85,13 +108,9 @@ const Home = () => {
           </tbody>
         </table>
 
-        <p className="loginBtn" onClick={login}>
-          LOGIN
-        </p>
-
-        <Link to="/SignUp">
-          <p className="signupBtn">SIGN UP</p>
-        </Link>
+        <div>
+            <Button color="secondary" className='loginBtn' variant="contained" onClick={login}> LOGIN </Button>
+        </div>
       </div>
 
       <div

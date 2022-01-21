@@ -15,9 +15,9 @@
 
 .loginTable {
   position: relative;
-  margin: 100px auto 0;
+  margin: 0 auto 0;
   width: 285px;
-  padding: 25px;
+  padding: 25px 25px;
 }
 
 .tableItem {
@@ -25,6 +25,7 @@
 }
 
 .homeText {
+  margin-top: 40px;
   display: inline-block;
   color: white;
   font-family: "Bebas Neue", cursive;
@@ -32,16 +33,9 @@
 }
 
 .loginBtn {
-  color: white;
-  background: pink;
-  font-family: "Bebas Neue", cursive;
-  font-size: 25px;
-  margin-right: 10px;
-  margin-left: 10px;
-  width: 230px;
-  height: 5vh;
-  margin: auto;
-  margin-bottom: 8px;
+    height: 50px;
+    width: 300px;
+    padding-top: 40px;
 }
 .hello {
   font-family: "Bebas Neue", cursive;
@@ -74,5 +68,19 @@
   margin: auto;
   align-items: center;
   margin-left: 40%;
-  margin-top: 20%;
+  margin-top: 15%;
+  border-radius: 10px;
 }
+
+.signupbtn{
+    float:right;
+    padding-right: 20px;
+    padding-top:15px;
+}
+
+
+.loginField{
+    margin-top: 20px !important;
+    color: white !important;
+}
+
