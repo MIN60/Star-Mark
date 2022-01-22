@@ -8,6 +8,7 @@ import Switch from '@mui/material/Switch';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
+
 axios.defaults.withCredentials = true;
 
 function ChangeLogin(){
@@ -18,15 +19,20 @@ const SignUp = () => {
 
     const submitUserInfo = () => {
         const username = document.getElementsByName('username')[0].value.trim();
-        const nickName = document.getElementsByName('nickName')[0].value.trim();
+        const nickname = document.getElementsByName('nickname')[0].value.trim();
         const email = document.getElementsByName('email')[0].value.trim();
         const pw1 = document.getElementsByName('pw1')[0].value.trim();
         const pw2 = document.getElementsByName('pw2')[0].value.trim();
 
+        console.log(nickname);
+        console.log(email);
+        console.log(pw2);
+        console.log(username);
+
         if(username === ""){
             return alert('아이디를 입력해주세요.');
         }
-        else if(nickName === ""){
+        else if(nickname === ""){
             return alert('닉네임을 입력해주세요.');
         }
         else if(email === ""){
@@ -46,11 +52,11 @@ const SignUp = () => {
             return alert('비밀번호가 일치하지 않습니다.');
         }
 
-        axios.post("http://192.249.18.163:80/controllers/user/",{
+        axios.post("/users/signup",{
             name: username,
             email: email,
             password: pw2,
-            nickname: nickName,
+            nickname: nickname,
         })
         .then(function(response) {
             console.log(response);

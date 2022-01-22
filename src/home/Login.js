@@ -8,6 +8,8 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 
+
+
 axios.defaults.withCredentials = true;
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
@@ -29,29 +31,29 @@ const Home = () => {
   });
 
   const login = () => {
-    const userId = document.getElementsByName("id")[0].value.trim();
-    const pw = document.getElementsByName("password")[0].value.trim();
+    const email = document.getElementsByName('email')[0].value.trim();
+    const pw = document.getElementsByName('pw')[0].value.trim();
 
-    if (userId === "") {
-      return alert("아이디를 입력해주세요.");
+    if (email === "") {
+      return alert("이메일을 입력해주세요.");
     } else if (pw === "") {
       return alert("비밀번호를 입력해주세요.");
     }
 
     axios
-      .post("http://192.249.18.169:443/account/login/", {
-        userID: userId,
+      .get("/users/signin", {params: {
+        email: email, 
         password: pw,
-      })
+      }})
       .then(function (response) {
         console.log(response);
 
         if (response.data == "wrong userID") {
-          return alert("등록되지 않은 아이디입니다.");
+          return alert("등록되지 않은 이메일입니다.");
         } else if (response.data == "wrong password") {
           return alert("잘못된 비밀번호입니다.");
         } else {
-          sessionStorage.setItem("user_id", userId);
+          sessionStorage.setItem("user_id", email);
           window.location.href = "/Seats";
         }
       })
@@ -85,7 +87,7 @@ const Home = () => {
                 <TextField
                   className="loginField"
                   type="text"
-                  name="id"
+                  name="email"
                   id="standard-basic"
                   variant="standard"
                 />
@@ -99,7 +101,7 @@ const Home = () => {
               <td className="tableItem">
                 <TextField
                   type="password"
-                  name="password"
+                  name="pw"
                   id="standard-basic"
                   variant="standard"
                 />
