@@ -1,29 +1,29 @@
 import React, { useState } from "react";
+import './Stardot.css';
 
+const result = document.getElementById('result');
 
+document.onclick = ScreenClick;
 
-
-const result = document.getElementById('result');  //id result 인곳에 표시함
-document.onclick = ClickScreen;
-
-function ClickScreen(evt){
+function ScreenClick(evt){
 
   //event 객체에 접근
   evt = evt || window.event;
   var x = 0,
       y = 0;
 
+
   //event 객체가 pageX 속성을 포함하고 있다면 pageX와 pageY 위치
   if(evt.pageX){
     x = evt.pageX;
     y = evt.pageY;
 
-  //event 객체가 clientX 속성을 포함하고 있다면
+  //clientX 속성
   }else if(evt.clientX){
     var offsetX = 0,
         offsetY = 0;
 
-    //documentElement.scrollLeft를 지원하면
+    //documentElement.scrollLeft를 지원시
     if(document.documentElement.scrollLeft){
       offsetX = document.documentElement.scrollLeft;
       offsetY = document.documentElement.scrollTop;
@@ -35,9 +35,10 @@ function ClickScreen(evt){
     x = evt.clientX + offsetX;
     y = evt.clientY + offsetY;
   }
+  console.log(x,y) //콘솔에 좌표 찍기
 
- //document.write("you clicked at x=" + x + " y=" + y);
-  result.innerHTML = `${x}px, ${y}px`;
+  //document.write("좌표 x=" + x + " y=" + y); //페이지 넘겨서 출력
+
 }
 
 const Stardot = () => {
@@ -45,8 +46,9 @@ const Stardot = () => {
 
   return (
     <div>
-      <p>Client X, Y</p>
-      <div id="result"></div>
+        <div className="Starback">
+        <p>Client X, Y</p>
+      </div>
     </div>
   );
 };
