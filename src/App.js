@@ -5,6 +5,7 @@ import { Home } from './home/index.js';
 import Login from './home/Login.js'
 import  SignUp  from './home/signUp.js';
 import Seats from './pages/Seats.js';
+import Stardot from './stars/Stardot.js';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
               <Route exact path='/' element={<Home />}></Route>
               <Route path='/Login' element={<Login />}></Route>
               <Route path='/SignUp' element={<SignUp />}></Route>
+              <Route path='/Stardot' element={<Stardot />}></Route>
               <Route path='/Seats' element={<Seats />}></Route>
           </Routes>
         </Router>
