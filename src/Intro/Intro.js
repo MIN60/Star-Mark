@@ -1,11 +1,105 @@
 import gsap from 'gsap'
 import React, { useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import axios from 'axios';
 import './Intro.css';
 
-const Intro = () => {
+
+export const Intro = () => {
+
+    const signin = () => {
+        const email = document.getElementById('loginEmail').value.trim();
+        const pw = document.getElementById('loginPassword').value.trim();
+        if (email === "") {
+          return alert("이메일을 입력해주세요.");
+        } else if (pw === "") {
+          return alert("비밀번호를 입력해주세요.");
+        }
+        axios.get("/users/signin", {params: {
+            email: email, 
+            password: pw
+        }}).then(function (response) {
+            sessionStorage.setItem("token", response.token);
+            //move to bookmarker page - in SPA concept!!
+            let scene4 = gsap.timeline();
+            let scene4_1 = gsap.timeline();
+            let scene4_2 = gsap.timeline();
+            let scene4_3 = gsap.timeline();
+            let scene4_4 = gsap.timeline();
+            let scene4_5 = gsap.timeline();
+            //login page
+            scene4.to("#info2", {duration: 0.5, y: -720, ease:"Power2.easeOut" })
+            scene4.to("#info2", {duration: 1,opacity: 0 ,y: 0, ease:"Power2.easeIn" })
+            //stars dillute
+            scene4.to("#stars", {delay: 1.5, duration: 1.5, opacity: 0 })
+            //Hills motion
+            scene4_1.to("#h3-1", {delay: 1.5, duration: 1.5, opacity:0, x: -150,y: -200, scale:2, ease:"Power2.easeIn" })
+            scene4_1.to("#h3-1", {delay: 3.1, duration: 1.5, opacity:1 ,x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
+            scene4_2.to("#h3-2", {delay: 2, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
+            scene4_2.to("#h3-2", {delay: 3.5, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
+            scene4_3.to("#h3-3", {delay: 2.3, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
+            scene4_3.to("#h3-3", {delay: 4, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
+            scene4_4.to("#h3-4", {delay: 2.6, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
+            scene4_4.to("#h3-4", {delay: 4.4, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
+            scene4_5.to("#h3-5", {delay: 3, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
+            scene4_5.to("#h3-5", {delay: 4.9, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
+
+        }).catch(function (error) {
+            return alert("이메일 또는 비밀번호가 잘못되었습니다.");
+        });
+    }
+    
+    const signup = () => {
+        const username = document.getElementById('signupName').value.trim();
+        const nickname = document.getElementById('signupNickName').value.trim();
+        const email = document.getElementById('signupEmail').value.trim();
+        const pw1 = document.getElementById('signupPassword').value.trim();
+        const pw2 = document.getElementById('signupConfirmPassword').value.trim();
+        const loginBtn = document.querySelector("label.login");
+    
+        if(username === ""){
+            return alert('아이디를 입력해주세요.');
+        }
+        else if(nickname === ""){
+            return alert('닉네임을 입력해주세요.');
+        }
+        else if(email === ""){
+            return alert('이메일을 입력해주세요.');
+        }
+        else if(pw1 === ""){
+            return alert('비밀번호를 입력해주세요.');
+        }
+        else if(pw2 === ""){
+            return alert('비밀번호 확인을 위해 비밀번호를 한 번 더 입력해주세요.');
+        }
+    
+        if(pw1 !== pw2){
+            return alert('비밀번호가 일치하지 않습니다.');
+        }
+        
+        axios.post("/users/signup",{
+            name: username,
+            email: email,
+            password: pw2,
+            nickname: nickname,
+        }).then(function(response) {
+            console.log(response);
+            alert('회원가입이 완료되었습니다!');
+            loginBtn.click();
+            return false;
+        }).catch(function(error) {
+            console.log(error.response);
+        });
+    }
 
     useEffect(() => {
+
+        //signin & signup
+        const signupbutton = document.getElementById('registerButton');
+        signupbutton.addEventListener('click',signup);
+        const signinbutton = document.getElementById('loginButton');
+        signinbutton.addEventListener('click',signin);
+
         gsap.registerPlugin(ScrollTrigger);
         const speed = 100;
 
@@ -188,8 +282,7 @@ const Intro = () => {
         scene3.fromTo("#stars", { opacity: 0 }, { opacity: 0.5, y: -500 }, 0)
 
         // Scroll Back text
-        scene3.fromTo("#arrow2", { opacity: 0 }, { opacity: 0.7, y: -710 }, 0.25)
-        scene3.fromTo("#text2", { opacity: 0 }, { opacity: 0.7, y: -710 }, 0.3)
+        scene3.fromTo("#info2", { opacity: 0 }, { opacity: 0.7, y: -710 }, 0.3)
 
         //gradient value change
         scene3.to("#bg2-grad", { attr: { cy: 600 } }, 0)
@@ -224,5 +317,3 @@ const Intro = () => {
     )
 
 }
-
-export default Intro;
