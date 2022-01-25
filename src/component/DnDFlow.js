@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ReactFlow, {
   ReactFlowProvider,
   addEdge,
@@ -125,9 +125,7 @@ const DnDFlow = () => {
           console.log(error.response);
       });
   }
-
-
-
+  
   const graphStyles = { background:"public/img/stars.png"};
 
   return (
@@ -146,10 +144,13 @@ const DnDFlow = () => {
           >
           <Controls />
           </ReactFlow>
-          {open ? 
-            <Dialog open={open} onClose={handleClose}>
+        </div>
+        <Sidebar />
+      </ReactFlowProvider>
+      {open ? 
+            <Dialog className="dialog" open={open} onClose={handleClose}>
               <Button className="closebtn" variant="outlined" color="primary" onClick={handleClose}>X</Button>  
-              <DialogTitle classNmae="popTitle">ADD STAR MARK</DialogTitle>
+              <DialogTitle className="popTitle">ADD STAR MARK</DialogTitle>
               <DialogContent>
                 <TextField label ="NAME" type="text" name="Name" value={bookmarkname} onChange={handleBookmarkNameChange}/><br/>
                 <TextField label ="URL" type="text" name="URL" value={link} onChange={handleLinkChange}/><br/>
@@ -160,9 +161,6 @@ const DnDFlow = () => {
               </DialogActions>
             </Dialog> 
           : null}
-        </div>
-        <Sidebar />
-      </ReactFlowProvider>
     </div>
   );
 };
