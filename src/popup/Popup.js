@@ -1,4 +1,3 @@
-import gsap from 'gsap'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './bookmark.css';
@@ -86,6 +85,7 @@ const Popup = () => {
 
     return(
         <div>
+            <img src="img/stars.png" onClick={handelClickOpen}/>
             <Button variant="contained" color="primary" onClick={handelClickOpen}>
             </Button>
             <Dialog open={open} onClose={handleClose}>
