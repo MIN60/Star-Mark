@@ -6,6 +6,7 @@ import Login from './home/Login.js'
 import  SignUp  from './home/signUp.js';
 import Stardot from './stars/Stardot.js';
 import Popup from './popup/Popup.js';
+import DnDFlow from './component/DnDFlow.js'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
               <Route path='/SignUp' element={<SignUp />}></Route>
               <Route path='/Stardot' element={<Stardot />}></Route>
               <Route path='/Popup' element={<Popup />}></Route>
+              <Route path='/DnDFlow' element={<DnDFlow />}></Route>
           </Routes>
         </Router>
       </div>

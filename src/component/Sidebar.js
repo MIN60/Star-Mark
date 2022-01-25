@@ -8,9 +8,7 @@ export default () => {
 
   return (
     <aside>
-      <div className="description">
-        <p className="dndin">StarMark</p>
-        </div>
+      <div className="description">StarMark</div>
 
       <div
         className="dndnode input"

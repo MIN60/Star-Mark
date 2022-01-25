@@ -18,6 +18,8 @@ const styles = theme => ({
 });
 
 
+
+
 class Popup extends React.Component{
     constructor(props){
         super(props);
@@ -79,6 +81,9 @@ class Popup extends React.Component{
         })
     }
 
+/////
+
+
 
 
     render(){
@@ -86,9 +91,8 @@ class Popup extends React.Component{
         //const {classes} = this.props;
         return(
             <div>
-                <Button variant="contained" color="primary" onClick={this.handelClickOpen}>
-                    이걸 드래그한 별 사진으로 바꾸면 됨, onClick만 유지하면 이미지도 ok
-                </Button>
+                <img src="img/stars.png" onClick={this.handelClickOpen}/>
+                    
                 <Dialog open={this.state.open} onClose={this.handleClose}>
                     <Button className="closebtn" variant="outlined" color="primary" onClick={this.handleClose}>X</Button>  
                     <DialogTitle classNmae="popTitle">ADD STAR MARK</DialogTitle>
