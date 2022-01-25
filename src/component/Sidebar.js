@@ -1,6 +1,5 @@
 import React from "react";
 import "./sidebar.css";
-//import popup from "../popup/Popup.js";
 
 
 ////////
@@ -52,7 +51,7 @@ const Sidebar = () => {
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >
-        <img alt="star1" className="imgsize" src="img/stars.png"/>
+        <img alt="star1" className="imgsize" src="img/stars.png" />
       </div>
 
       <div

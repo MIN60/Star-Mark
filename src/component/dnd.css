@@ -92,3 +92,17 @@
 .react-flow__node-input .react-flow__handle {
   background: rgba( 255, 255, 255, 0.001) !important;
 }
+
+.closebtn{
+  text-align: left !important;
+  justify-content:end !important;
+  border:0 !important;
+}
+
+.popTitle{
+  font-family: 'Bebas Neue', cursive;
+}
+
+.starstyles{
+  background-image: url('/public/img/stars.png') !important;
+}
