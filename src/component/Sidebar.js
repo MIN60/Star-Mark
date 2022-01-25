@@ -1,5 +1,6 @@
 import React from "react";
 import "./sidebar.css";
+import popup from "../popup/Popup.js";
 export default () => {
   const onDragStart = (event, nodeType) => {
     event.dataTransfer.setData("application/reactflow", nodeType);
