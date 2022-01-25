@@ -26,31 +26,6 @@ const Bookmark = () => {
     const [bookmarkname,setBookmarkName] = useState('');
     const [link,setLink] = useState('');
 
-    // ADD버튼 누르면 저장할 예정
-    const handleAdd = () =>{
-        const formData = new FormData();
-        formData.append('email', id);
-        formData.append('link', link);
-        //아래는 임의로 넣은 data
-        formData.append('attr','like');
-        formData.append('memo','i like the post');
-        formData.append('x_coor',403);
-        formData.append('y_coor',340);
-        axios.post("/api/bookmarks/3", {
-            'email': id,
-            'link': link,
-            'attr': 'like',
-            'memo': 'i like this page',
-            'x_coor': 234,
-            'y_coor': 234
-        }).then(function(response) {
-            console.log(response);
-            alert('Bookmark Added!');
-        }).catch(function(error) {
-            console.log(error.response);
-        });
-    }
-
     //handle bookmarkname change
     const handleBookmarkNameChange = e => setBookmarkName(e.target.value);
     //handle link change
@@ -61,6 +36,31 @@ const Bookmark = () => {
         setOpen(true);
     }
 
+    const handleClose = () => { //창끄기
+        setOpen(false);
+        setBookmarkName('');
+        setLink('');
+    }
+
+    // ADD버튼 누르면 저장할 예정
+    const handleAdd = () =>{
+        axios.post("/api/bookmarks/3", {
+            'email': id,
+            'bookmarkname': bookmarkname,
+            'link': link,
+            'attr': 'like',
+            'memo': 'i like this page',
+            'x_coor': 234,
+            'y_coor': 234
+        }).then(function(response) {
+            console.log(response);
+            alert('Bookmark Added!');
+            handleClose();
+        }).catch(function(error) {
+            console.log(error.response);
+        });
+    }
+
     const handleDelete = () => { 
         //bookmark 삭제
         axios.delete('/api/bookmarks/4',{
@@ -69,15 +69,10 @@ const Bookmark = () => {
         }).then(function(response) {
             console.log(response);
             alert('Bookmark deleted!');
+            handleClose();
         }).catch(function(error) {
             console.log(error.response);
         });
-    }
-
-    const handleClose = () => { //창끄기
-        setOpen(false);
-        setBookmarkName('');
-        setLink('');
     }
 
     return(

@@ -21,7 +21,6 @@ export const Intro = () => {
         }}).then(function (response) {
             console.log(response);
             const gotemail = response.data.email;
-            sessionStorage.setItem("token", response.data.token);
             //move to bookmarker page - in SPA concept!!
             let scene4 = gsap.timeline();
             let scene4_1 = gsap.timeline();
@@ -46,7 +45,7 @@ export const Intro = () => {
             scene4_5.to("#h3-5", {delay: 3, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
             scene4_5.to("#h3-5", {delay: 4.9, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
             //session storage에 token 존재 확인
-            if (sessionStorage.getItem("token")){
+            if (document.cookie){
                 setTimeout(function(){ window.location.href= "/mypage/"+gotemail;}, 6000);
             }
             else {
