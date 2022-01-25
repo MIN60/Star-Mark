@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
 import { Intro } from './Intro/Intro.js';
-import { Bookmark } from './bookmark/bookmark.js';
+import Bookmark from './bookmark/bookmark.js';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 

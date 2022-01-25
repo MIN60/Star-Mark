@@ -15,7 +15,7 @@ export const Intro = () => {
         } else if (pw === "") {
           return alert("비밀번호를 입력해주세요.");
         }
-        axios.get("/users/signin", {params: {
+        axios.get("/api/users/signin", {params: {
             email: email, 
             password: pw
         }}).then(function (response) {
@@ -85,7 +85,7 @@ export const Intro = () => {
             return alert('비밀번호가 일치하지 않습니다.');
         }
         
-        axios.post("/users/signup",{
+        axios.post("/api/users/signup",{
             name: username,
             email: email,
             password: pw2,
