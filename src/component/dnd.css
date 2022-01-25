@@ -3,7 +3,9 @@
     display: flex;
     height: 100%;
     width: 100%;
-    background: #ffffff;
+    background-image: url('/public/img/shootingstar.gif');
+    background-size: cover;
+    height: 100vh;
   }
   
   .dndflow aside {
@@ -43,3 +45,50 @@
   .react-flow {
     position: static;
   }
+
+  .react-flow__node{
+    width: 92px;
+    height: 92px;
+    background-image: url('/public/img/stars.png') !important;
+    background-size: cover !important;
+    background: rgba( 255, 255, 255, 0.001 );
+}
+
+.react-flow__node-input {
+    background: rgba( 255, 255, 255,0.001 );
+    border-color: rgba( 255, 255, 255, 0.001);
+    
+}
+
+.react-flow__handle {
+  background: #555; 
+  border-radius: 100%;
+  height: 6px;
+  position: absolute;
+  width: 6px;
+}
+
+.react-flow__handle {
+  background: #555;
+  border: 0px !important;
+  border-radius: 100%;
+  height: 30px !important;
+  position: absolute;
+  width: 15px !important;
+}
+
+.react-flow__node-default .react-flow__handle {
+  background: rgba( 255, 255, 255, 0.001) !important;
+}
+
+.react-flow__node-default, .react-flow__node-input, .react-flow__node-output {
+  color: rgba( 255, 255, 255, 0.001) !important;
+}
+
+.react-flow__node-default {
+  border-color: rgba( 255, 255, 255, 0.001) !important;
+}
+
+.react-flow__node-input .react-flow__handle {
+  background: rgba( 255, 255, 255, 0.001) !important;
+}

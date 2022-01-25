@@ -1,4 +1,7 @@
 import React, { useState, useRef } from "react";
+
+
+
 import ReactFlow, {
   ReactFlowProvider,
   addEdge,
@@ -57,6 +60,8 @@ const DnDFlow = () => {
     setElements((es) => es.concat(newNode));
   };
 
+  const graphStyles = { background:"public/img/stars.png"};
+
   return (
     <div className="dndflow">
       <ReactFlowProvider>
@@ -68,6 +73,7 @@ const DnDFlow = () => {
             onLoad={onLoad}
             onDrop={onDrop}
             onDragOver={onDragOver}
+            style={graphStyles}
           >
             <Controls />
           </ReactFlow>
