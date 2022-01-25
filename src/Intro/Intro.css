@@ -25,6 +25,32 @@ svg {
       left: 0;
 }
 
+#scene3 {
+  visibility: hidden;
+}
+
+#fstar_circle{
+  mix-blend-mode: overlay;
+}
+
+#h3-5 {
+  mix-blend-mode: multiply;
+}
+
+#h3-4 {
+  mix-blend-mode: multiply;
+}
+#h3-3 {
+  mix-blend-mode: multiply;
+}
+#h3-2 {
+  mix-blend-mode: multiply;
+}
+
+.wrapper {
+  transform: scale(0.5);
+}
+
 .scrollElement {
       position: absolute;
       height: 6000px;
