@@ -61,11 +61,39 @@ const DnDFlow = () => {
   const [memo,setMemo] = useState('');
   const [xpos,setXpos] = useState(0);
   const [ypos,setYpos] = useState(0);
+
+  const onLoad = (_reactFlowInstance) => setReactFlowInstance(_reactFlowInstance);
+
+  useEffect(()=>{
+    if (reactFlowInstance) {
+    axios.get("/api/bookmarks/1",
+      {
+        params: {
+          email: id
+        }
+      }).then(function(response) {
+        response.data.bookmarks.forEach(function(item){
+          const position = reactFlowInstance.project({
+            x: item.x_coor,
+            y: item.y_coor
+          });
+          const newNode = {
+            id: setId(),
+            type: 'default',
+            position,
+            data: { bmname: item.bookmarkname, url: item.link, memo: item.memo },
+          };
+          setElements((es) => es.concat(newNode));
+        });
+      }).catch(function(error) {
+          console.log(error);
+      });
+  }},[reactFlowInstance])
+
+  console.log(elements);
   const onConnect = (params) => setElements((els) => addEdge(params, els));
   const onElementsRemove = (elementsToRemove) =>
     setElements((els) => removeElements(elementsToRemove, els));
-
-  const onLoad = (_reactFlowInstance) => setReactFlowInstance(_reactFlowInstance);
 
   const onDragOver = (event) => {
     event.preventDefault();
