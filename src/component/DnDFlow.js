@@ -24,7 +24,7 @@ const styles = theme => ({
       display:'none'
   }
 });
-
+/*
 const initialElements = [
   {
     id: "1",
@@ -33,14 +33,15 @@ const initialElements = [
     position: { x: 250, y: 5 },
   },
 ];
+*/
 
 let id = 0;
-const getId = () => `dndnode_${id++}`;
+const setId = () => `dndnode_${id++}`;
 
 const DnDFlow = () => {
   const reactFlowWrapper = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
-  const [elements, setElements] = useState(initialElements);
+  const [elements, setElements] = useState([]);
   const onConnect = (params) => setElements((els) => addEdge(params, els));
   const onElementsRemove = (elementsToRemove) =>
     setElements((els) => removeElements(elementsToRemove, els));
@@ -62,7 +63,7 @@ const DnDFlow = () => {
       y: event.clientY - reactFlowBounds.top,
     });
     const newNode = {
-      id: getId(),
+      id: setId(),
       type,
       position,
       data: { label: "" },
@@ -76,11 +77,14 @@ const DnDFlow = () => {
   const [open,setOpen] = useState(false);
   const [bookmarkname,setBookmarkName] = useState('');
   const [link,setLink] = useState('');
+  const [memo,setMemo] = useState('');
 
   //handle bookmarkname change
   const handleBookmarkNameChange = e => setBookmarkName(e.target.value);
   //handle link change
   const handleLinkChange = e => setLink(e.target.value);
+  //handle memo change
+  const handleMemoChange = e => setMemo(e.target.value);
 
   //dialog 모달창
   const handelClickOpen = () => {
@@ -91,6 +95,7 @@ const DnDFlow = () => {
       setOpen(false);
       setBookmarkName('');
       setLink('');
+      setMemo('');
   }
 
   // ADD버튼 누르면 저장할 예정
@@ -99,9 +104,8 @@ const DnDFlow = () => {
           'email': id,
           'bookmarkname': bookmarkname,
           'link': link,
-          'attr': 'like',
-          'memo': 'i like this page',
-          'x_coor': 234,
+          'memo': memo,
+          'x_coor': 23,
           'y_coor': 234
       }).then(function(response) {
           console.log(response);
@@ -154,6 +158,7 @@ const DnDFlow = () => {
               <DialogContent>
                 <TextField label ="NAME" type="text" name="Name" value={bookmarkname} onChange={handleBookmarkNameChange}/><br/>
                 <TextField label ="URL" type="text" name="URL" value={link} onChange={handleLinkChange}/><br/>
+                <TextField label ="MEMO" type="text" name="Memo" value={link} onChange={handleMemoChange}/><br/>
               </DialogContent>
               <DialogActions>
                 <Button variant="outlined" color="primary" onClick={handleDelete}>DELETE</Button>

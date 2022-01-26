@@ -78,9 +78,13 @@ li:hover {
 .dndtitle{
   font-size: 30px;
   font-family: 'Bebas Neue', cursive;
-
 }
 
+.userintroduction{
+  font-size: 30px;
+  font-family: 'Bebas Neue', cursive;
+  white-space: pre-wrap;
+}
 
 .sidebarstyle{
   background-color: black; 
