@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import axios from 'axios';
 import './Intro.css';
+import { Cookies } from 'react-cookie';
 
 
 export const Intro = () => {
@@ -21,33 +22,36 @@ export const Intro = () => {
         }}).then(function (response) {
             console.log(response);
             const gotemail = response.data.email;
+            const token = response.data.token;
+            const cookies = new Cookies();
+            cookies.set("Authorization",token)
             //move to bookmarker page - in SPA concept!!
-            let scene4 = gsap.timeline();
-            let scene4_1 = gsap.timeline();
-            let scene4_2 = gsap.timeline();
-            let scene4_3 = gsap.timeline();
-            let scene4_4 = gsap.timeline();
-            let scene4_5 = gsap.timeline();
-            //login page
-            scene4.to("#info2", {duration: 0.5, y: -720, ease:"Power2.easeOut" })
-            scene4.to("#info2", {duration: 1,opacity: 0 ,y: 0, ease:"Power2.easeIn" })
-            //stars dillute
-            scene4.to("#stars", {delay: 1.5, duration: 1.5, opacity: 0 })
-            //Hills motion
-            scene4_1.to("#h3-1", {delay: 1.5, duration: 1.5, opacity:0, x: -150,y: -200, scale:2, ease:"Power2.easeIn" })
-            scene4_1.to("#h3-1", {delay: 3.1, duration: 1.5, opacity:1 ,x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
-            scene4_2.to("#h3-2", {delay: 2, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
-            scene4_2.to("#h3-2", {delay: 3.5, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
-            scene4_3.to("#h3-3", {delay: 2.3, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
-            scene4_3.to("#h3-3", {delay: 4, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
-            scene4_4.to("#h3-4", {delay: 2.6, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
-            scene4_4.to("#h3-4", {delay: 4.4, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
-            scene4_5.to("#h3-5", {delay: 3, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
-            scene4_5.to("#h3-5", {delay: 4.9, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
-            //session storage에 token 존재 확인
             if (document.cookie){
-                setTimeout(function(){ window.location.href= "/mypage/"+gotemail;}, 6000);
+                setTimeout(function(){ window.location.href= "/mypage/"+gotemail;}, 10000);
+                let scene4 = gsap.timeline();
+                let scene4_1 = gsap.timeline();
+                let scene4_2 = gsap.timeline();
+                let scene4_3 = gsap.timeline();
+                let scene4_4 = gsap.timeline();
+                let scene4_5 = gsap.timeline();
+                //login page
+                scene4.to("#info2", {duration: 0.5, y: -720, ease:"Power2.easeOut" })
+                scene4.to("#info2", {duration: 1,opacity: 0 ,y: 0, ease:"Power2.easeIn" })
+                //stars dillute
+                scene4.to("#stars", {delay: 1.5, duration: 1.5, opacity: 0 })
+                //Hills motion
+                scene4_1.to("#h3-1", {delay: 1.5, duration: 1.5, opacity:0, x: -150,y: -200, scale:2, ease:"Power2.easeIn" })
+                scene4_1.to("#h3-1", {delay: 3.1, duration: 1.5, opacity:1 ,x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
+                scene4_2.to("#h3-2", {delay: 2, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
+                scene4_2.to("#h3-2", {delay: 3.5, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
+                scene4_3.to("#h3-3", {delay: 2.3, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
+                scene4_3.to("#h3-3", {delay: 4, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
+                scene4_4.to("#h3-4", {delay: 2.6, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
+                scene4_4.to("#h3-4", {delay: 4.4, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
+                scene4_5.to("#h3-5", {delay: 3, duration: 1.5, opacity:0 , x: -150, y: -200, scale:2, ease:"Power2.easeIn" })
+                scene4_5.to("#h3-5", {delay: 4.9, duration: 1.5, opacity:1 , x: 0, y: -550, scale:1, ease:"Power2.easeOut" })
             }
+            //session storage에 token 존재 확인
             else {
                 return alert("Invalid Redirection!");
             }

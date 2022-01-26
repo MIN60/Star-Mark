@@ -2,6 +2,7 @@ import React from "react";
 import "./sidebar.css";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Cookies } from "react-cookie";
 
 
 ////////
@@ -15,9 +16,14 @@ const Sidebar = () => {
   const { id } = useParams();
   let gotnickname = '';
 
-  axios.get("/api/users/finduser", {params: {
-    email: id
-    }}).then(function (response) {
+  const cookies = new Cookies();
+
+  axios.get("/api/users/finduser", {
+    params: { email: id },
+    headers: {
+      "Authorization": cookies.get("Authorization"),
+    },
+  }).then(function (response) {
     console.log(response);
     gotnickname = response.data.nickname;
     console.log(gotnickname);

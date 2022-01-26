@@ -16,6 +16,7 @@ import Button from '@material-ui/core/Button';
 import {withStyles} from '@material-ui/core/styles';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { Cookies } from 'react-cookie';
 
 
 //모달 팝업창
@@ -98,15 +99,21 @@ const DnDFlow = () => {
       setMemo('');
   }
 
+  const cookies = new Cookies();
+
   // ADD버튼 누르면 저장할 예정
   const handleAdd = () =>{
-      axios.post("/api/bookmarks/3", {
-          'email': id,
-          'bookmarkname': bookmarkname,
-          'link': link,
-          'memo': memo,
-          'x_coor': 23,
-          'y_coor': 234
+      axios.post("/api/bookmarks/3",
+      {
+        headers: {
+          "Authorization": cookies.get("Authorization"),
+        },
+        'email': id,
+        'bookmarkname': bookmarkname,
+        'link': link,
+        'memo': memo,
+        'x_coor': 23,
+        'y_coor': 234
       }).then(function(response) {
           console.log(response);
           alert('Bookmark Added!');
@@ -119,6 +126,9 @@ const DnDFlow = () => {
   const handleDelete = () => { 
       //bookmark 삭제
       axios.delete('/api/bookmarks/4',{
+        headers: {
+          "Authorization": cookies.get("Authorization"),
+        },
           'email': id,
           'link': link
       }).then(function(response) {
@@ -158,7 +168,7 @@ const DnDFlow = () => {
               <DialogContent>
                 <TextField label ="NAME" type="text" name="Name" value={bookmarkname} onChange={handleBookmarkNameChange}/><br/>
                 <TextField label ="URL" type="text" name="URL" value={link} onChange={handleLinkChange}/><br/>
-                <TextField label ="MEMO" type="text" name="Memo" value={link} onChange={handleMemoChange}/><br/>
+                <TextField label ="MEMO" type="text" name="Memo" value={memo} onChange={handleMemoChange}/><br/>
               </DialogContent>
               <DialogActions>
                 <Button variant="outlined" color="primary" onClick={handleDelete}>DELETE</Button>
