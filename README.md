@@ -147,6 +147,14 @@ const onDragOver = (event) => {
   + 창이 새로 로드되었을 때, 저장된 북마크들의 정보를 얻어와서 생성될 수 있도록 하였다.
 
 ![bookmark](https://user-images.githubusercontent.com/55707601/151156868-801727a1-4426-4b91-99c7-ef7e850eb759.gif)
+- 별을 찍는 과정
+![stars](https://user-images.githubusercontent.com/49427080/151158562-cde22e9e-4ad0-44e5-8627-9461f3cb00fc.gif)
+- 별자리를 만드는 과정
+![bookmark](https://user-images.githubusercontent.com/49427080/151158669-7e5a7ffb-0af1-4978-96e1-f1121f4187eb.gif)
+- 더블 클릭을 통해 북마크를 생성할 수 있다.
+![Link](https://user-images.githubusercontent.com/49427080/151158748-5437ee66-252a-45e2-984c-1ddcd89f77da.gif)
+- 북마크의 링크로 이동하는 과정 
+
 
 ```cs
 useEffect(()=>{
