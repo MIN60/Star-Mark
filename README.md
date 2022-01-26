@@ -47,8 +47,8 @@
 
 ### 로그인
   + 로그인 기능 구현, 서버에서 제공한 토큰을 쿠키에 넣어 관리하였다. 서버 측 미들웨어 구성은 다음과 같다.
- 
-![login](https://user-images.githubusercontent.com/55707601/151156648-f36a4793-c211-450f-92dd-3894a5e74a80.gif)
+
+![starmark](https://user-images.githubusercontent.com/55707601/151156785-11901b7e-1858-454f-9eb2-9e3f48bb445d.gif)
 
 ```cs
   try {
@@ -69,6 +69,9 @@
 ### React-Flow-Renderer
   + react-flow-renderer 라이브러리를 이용하여 북마크의 드래그 앤 드롭 기능을 구현하였다. 북마크 역할을 하는 별을 node 객체에 입혔고, 라이브러리에 내장되어 있는 Edge connection 기능을 이용해 별자리를 나타낼 수 있도록 하였다.
 
+![bookmark](https://user-images.githubusercontent.com/55707601/151156868-801727a1-4426-4b91-99c7-ef7e850eb759.gif)
+
+![login](https://user-images.githubusercontent.com/55707601/151156648-f36a4793-c211-450f-92dd-3894a5e74a80.gif)
   ```cs
   <div className="dndflow">
       <ReactFlowProvider>
