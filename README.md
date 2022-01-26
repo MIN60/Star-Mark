@@ -3,7 +3,11 @@
 별자리 북마크 웹, STAR MARK
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/55707601/149877665-007975bb-7783-4447-8b18-b9bc468373d4.gif)
 
-나랑 별보러 가지 않을래~~~
+
+
+
+
+>나랑 별보러 가지 않을래~~~
 
 ## Story
 
