@@ -140,7 +140,7 @@ const DnDFlow = () => {
       });
   }
   
-  const graphStyles = { background:"public/img/stars.png"};
+  const graphStyles = { background:"img/stars.png"};
 
   return (
     <div className="dndflow">
