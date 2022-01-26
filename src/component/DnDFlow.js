@@ -4,6 +4,7 @@ import ReactFlow, {
   addEdge,
   removeElements,
   Controls,
+  isNode,
 } from "react-flow-renderer";
 import Sidebar from "./Sidebar.js";
 import "./dnd.css";
@@ -88,8 +89,13 @@ const DnDFlow = () => {
   const handleMemoChange = e => setMemo(e.target.value);
 
   //dialog 모달창
-  const handelClickOpen = () => {
-      setOpen(true);
+  const handleClickOpen = (element) => {
+    if (isNode(element)) setOpen(true);
+  }
+
+  //url 이동
+  const handleDoubleClick = (node) => {
+    console.log("double clicked");
   }
 
   const handleClose = () => { //창끄기
@@ -153,7 +159,8 @@ const DnDFlow = () => {
             onLoad={onLoad}
             onDrop={onDrop}
             onDragOver={onDragOver}
-            onNodeDoubleClick={handelClickOpen}
+            onNodeDoubleClick={handleDoubleClick}
+            onElementClick={handleClickOpen}
             style={graphStyles}
           >
           <Controls />
