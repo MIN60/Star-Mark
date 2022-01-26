@@ -121,3 +121,7 @@ z-index: 2;
   letter-spacing: 0.0075em;
 }
 
+.react-flow__controls-button{
+  background:black;
+  border:0px;
+}
