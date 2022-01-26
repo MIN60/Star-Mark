@@ -7,23 +7,26 @@
 
 ## Story
 
-
-<details>
+  
+ 
+ <details>
+<summary>D일주일간의 여정</summary>
 <div markdown="1">
+
 3줄 요약
 1. 종준이가 "무조건" 3D로 천체를 구현해달래서 three.js를 밤새 공부함
 2. 막상 보고 종준이가 거부함
 3. 억울해서 gif로 넣을거임
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/55707601/149877665-007975bb-7783-4447-8b18-b9bc468373d4.gif)
-  
  
- 
-
- 
+ *이 내용은 실화와 0.1%만 관련있음을 알려드립니다*
  
 
 </div>
 </details>   
+
+ 
+
 
 
 
