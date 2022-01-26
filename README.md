@@ -148,8 +148,6 @@ const onDragOver = (event) => {
 
 ![bookmark](https://user-images.githubusercontent.com/55707601/151156868-801727a1-4426-4b91-99c7-ef7e850eb759.gif)
 
-
-![bookmark](https://user-images.githubusercontent.com/55707601/151156868-801727a1-4426-4b91-99c7-ef7e850eb759.gif)
 ```cs
 useEffect(()=>{
     if (reactFlowInstance) {
