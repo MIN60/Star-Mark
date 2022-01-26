@@ -69,7 +69,7 @@
 ### React-Flow-Renderer
   + react-flow-renderer 라이브러리를 이용하여 북마크의 드래그 앤 드롭 기능을 구현하였다. 북마크 역할을 하는 별을 node 객체에 입혔고, 라이브러리에 내장되어 있는 Edge connection 기능을 이용해 별자리를 나타낼 수 있도록 하였다.
 
-![bookmark](https://user-images.githubusercontent.com/55707601/151156868-801727a1-4426-4b91-99c7-ef7e850eb759.gif)
+
 
 ![login](https://user-images.githubusercontent.com/55707601/151156648-f36a4793-c211-450f-92dd-3894a5e74a80.gif)
   ```cs
@@ -145,6 +145,9 @@ const onDragOver = (event) => {
 
   + 별을 더블 클릭했을 때, 팝업 창을 생성해서 DB에 북마크의 이름과 링크, 그리고 메모가 전송될 수 있도록 하였다.
   + 창이 새로 로드되었을 때, 저장된 북마크들의 정보를 얻어와서 생성될 수 있도록 하였다.
+
+![bookmark](https://user-images.githubusercontent.com/55707601/151156868-801727a1-4426-4b91-99c7-ef7e850eb759.gif)
+
 ```cs
 useEffect(()=>{
     if (reactFlowInstance) {
