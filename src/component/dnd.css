@@ -1,0 +1,127 @@
+.dndflow {
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-image: url('/public/img/mark.png');
+  background-size: cover;
+  height: 100vh;
+}
+
+.dndflow aside {
+  border-right: 1px solid black;
+  padding: 15px 10px;
+  font-size: 12px;
+  background: #ffffff;
+}
+
+.dndflow aside > * {
+  margin-bottom: 10px;
+  cursor: grab;
+}
+
+.dndflow aside .description {
+  margin-bottom: 10px;
+}
+
+.dndflow .reactflow-wrapper {
+  flex-grow: 1;
+  height: 100%;
+  width: 80%;
+  z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .dndflow {
+    flex-direction: row;
+  }
+
+  .dndflow aside {
+    width: 20%;
+    max-width: 180px;
+    z-index: 10000;
+  }
+}
+.react-flow {
+  position: static;
+}
+
+.react-flow__node{
+  width: 92px;
+  height: 92px;
+  background-image: url('/public/img/stars.png') !important;
+  background-size: cover !important;
+  background: rgba( 255, 255, 255, 0.001 );
+}
+
+.react-flow__node-input {
+  background: rgba( 255, 255, 255,0.001 );
+  border-color: rgba( 255, 255, 255, 0.001);
+  
+}
+
+.react-flow__handle {
+background: #555; 
+border-radius: 100%;
+height: 6px;
+position: absolute;
+width: 6px;
+}
+
+.react-flow__handle {
+background: #555;
+border: 0px !important;
+border-radius: 100%;
+height: 30px !important;
+position: absolute;
+width: 15px !important;
+}
+
+.react-flow__node-default .react-flow__handle {
+background: rgba( 255, 255, 255, 0.001) !important;
+}
+
+.react-flow__node-default, .react-flow__node-input, .react-flow__node-output {
+color: rgba( 255, 255, 255, 0.001) !important;
+}
+
+.react-flow__node-default {
+border-color: rgba( 255, 255, 255, 0.001) !important;
+}
+
+.react-flow__node-input .react-flow__handle {
+background: rgba( 255, 255, 255, 0.001) !important;
+}
+
+.closebtn{
+text-align: left !important;
+justify-content:end !important;
+border:0 !important;
+}
+
+.popTitle{
+font-family: 'Bebas Neue', cursive !important;
+}
+
+.starstyles{
+background-image: url('/public/img/stars.png') !important;
+}
+
+.dialog{
+z-index: 2;
+}
+
+.MuiTypography-h6 {
+  font-size: 1.25rem;
+  font-family: 'Bebas Neue', cursive !important;
+  font-size:30px !important;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+
+.react-flow__controls-button{
+  background:black;
+  border:0px;
+}
