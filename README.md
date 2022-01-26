@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# STAR MARK
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+별자리 북마크 웸, STAR MARK
 
 ## Available Scripts
 
