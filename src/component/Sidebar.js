@@ -31,7 +31,7 @@ const Sidebar = () => {
       <div className="userintroduction">{`${gotnickname}'s\nBookmark Sky`}</div>
       <div className="description" className="dndtitle">Select StarMark</div>
       <div
-        className="dndnode input"
+        className="dndnode"
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >
@@ -47,7 +47,7 @@ const Sidebar = () => {
       </div>
 
       <div
-        className="dndnode output"
+        className="dndnode"
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >

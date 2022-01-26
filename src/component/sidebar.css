@@ -78,9 +78,11 @@ li:hover {
 .dndtitle{
   font-size: 30px;
   font-family: 'Bebas Neue', cursive;
+  color: white;
 }
 
 .userintroduction{
+  color: white;
   font-size: 30px;
   font-family: 'Bebas Neue', cursive;
   white-space: pre-wrap;
@@ -88,4 +90,5 @@ li:hover {
 
 .sidebarstyle{
   background-color: black; 
+  background-image: url('/public/img/float.gif') !important;
 }

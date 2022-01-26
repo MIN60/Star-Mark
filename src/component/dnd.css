@@ -9,7 +9,7 @@
 }
 
 .dndflow aside {
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid black;
   padding: 15px 10px;
   font-size: 12px;
   background: #ffffff;
@@ -100,7 +100,7 @@ border:0 !important;
 }
 
 .popTitle{
-font-family: 'Bebas Neue', cursive;
+font-family: 'Bebas Neue', cursive !important;
 }
 
 .starstyles{
@@ -109,4 +109,14 @@ background-image: url('/public/img/stars.png') !important;
 
 .dialog{
 z-index: 2;
+}
+
+.MuiTypography-h6 {
+  font-size: 1.25rem;
+  font-family: 'Bebas Neue', cursive !important;
+  font-size:30px !important;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
 }

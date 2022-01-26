@@ -120,7 +120,7 @@ const DnDFlow = () => {
       //bookmark 삭제
       axios.delete('/api/bookmarks/4',{
           'email': id,
-          'link': link
+          'link': link,
       }).then(function(response) {
           console.log(response);
           alert('Bookmark deleted!');
@@ -158,7 +158,7 @@ const DnDFlow = () => {
               <DialogContent>
                 <TextField label ="NAME" type="text" name="Name" value={bookmarkname} onChange={handleBookmarkNameChange}/><br/>
                 <TextField label ="URL" type="text" name="URL" value={link} onChange={handleLinkChange}/><br/>
-                <TextField label ="MEMO" type="text" name="Memo" value={link} onChange={handleMemoChange}/><br/>
+                <TextField label ="MEMO" type="text" name="Memo" value={memo} onChange={handleMemoChange}/><br/>
               </DialogContent>
               <DialogActions>
                 <Button variant="outlined" color="primary" onClick={handleDelete}>DELETE</Button>
