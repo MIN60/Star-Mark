@@ -130,7 +130,7 @@ const DnDFlow = () => {
           "Authorization": cookies.get("Authorization"),
         },
           'email': id,
-          'link': link
+          'link': link,
       }).then(function(response) {
           console.log(response);
           alert('Bookmark deleted!');
