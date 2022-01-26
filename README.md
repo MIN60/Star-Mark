@@ -47,8 +47,8 @@
 
 ### 로그인
   + 로그인 기능 구현, 서버에서 제공한 토큰을 쿠키에 넣어 관리하였다. 서버 측 미들웨어 구성은 다음과 같다.
-  + 
-  + ![login](https://user-images.githubusercontent.com/55707601/151156648-f36a4793-c211-450f-92dd-3894a5e74a80.gif)
+ 
+![login](https://user-images.githubusercontent.com/55707601/151156648-f36a4793-c211-450f-92dd-3894a5e74a80.gif)
 
 ```cs
   try {
