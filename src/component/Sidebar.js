@@ -14,7 +14,7 @@ const Sidebar = () => {
 
   const { id } = useParams();
   let gotnickname = '';
-
+/*
   axios.get("/api/users/finduser", {params: {
     email: id
     }}).then(function (response) {
@@ -24,6 +24,7 @@ const Sidebar = () => {
     }).catch(function (error) {
     return alert("Error: Can't find nickname");
   });
+  */
 
   return (
     <aside className="sidebarstyle">

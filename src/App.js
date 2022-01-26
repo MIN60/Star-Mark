@@ -21,6 +21,7 @@ function App() {
               <Routes>
                 <Route exact path='/' element={<Intro />}></Route>
                 <Route exact path='/mypage/:id' element={<Bookmark />}></Route>
+                <Route path='/Bookmark' element={<Bookmark />}></Route>
               </Routes>
 
             </CSSTransition>
