@@ -59,6 +59,8 @@ const DnDFlow = () => {
   const [bookmarkname,setBookmarkName] = useState('');
   const [link,setLink] = useState('');
   const [memo,setMemo] = useState('');
+  const [xpos,setXpos] = useState(0);
+  const [ypos,setYpos] = useState(0);
   const onConnect = (params) => setElements((els) => addEdge(params, els));
   const onElementsRemove = (elementsToRemove) =>
     setElements((els) => removeElements(elementsToRemove, els));
@@ -79,6 +81,8 @@ const DnDFlow = () => {
       x: event.clientX - reactFlowBounds.left,
       y: event.clientY - reactFlowBounds.top,
     });
+    setXpos(event.clientX - reactFlowBounds.left);
+    setYpos(event.clientY - reactFlowBounds.top);
     const newNode = {
       id: setId(),
       type,
@@ -112,7 +116,7 @@ const DnDFlow = () => {
 
   // ADD버튼 누르면 저장할 예정
   const handleAdd = () =>{
-    console.log(cookies.get("Authorization"));
+    console.log("enter add handler");
       axios.post("/api/bookmarks/3",
       {
         headers: {
@@ -122,8 +126,8 @@ const DnDFlow = () => {
         'bookmarkname': bookmarkname,
         'link': link,
         'memo': memo,
-        'x_coor': 23,
-        'y_coor': 234
+        'x_coor': xpos,
+        'y_coor': ypos
       }).then(function(response) {
           console.log(response);
           alert('Bookmark Added!');
