@@ -43,6 +43,12 @@ const DnDFlow = () => {
   const reactFlowWrapper = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [elements, setElements] = useState([]);
+  //dialog 관련
+  const { id } = useParams();
+  const [open,setOpen] = useState(false);
+  const [bookmarkname,setBookmarkName] = useState('');
+  const [link,setLink] = useState('');
+  const [memo,setMemo] = useState('');
   const onConnect = (params) => setElements((els) => addEdge(params, els));
   const onElementsRemove = (elementsToRemove) =>
     setElements((els) => removeElements(elementsToRemove, els));
@@ -67,18 +73,11 @@ const DnDFlow = () => {
       id: setId(),
       type,
       position,
-      data: { label: "" },
+      data: { url : "" },
     };
 
     setElements((es) => es.concat(newNode));
   };
-
-  //dialog 관련
-  const { id } = useParams();
-  const [open,setOpen] = useState(false);
-  const [bookmarkname,setBookmarkName] = useState('');
-  const [link,setLink] = useState('');
-  const [memo,setMemo] = useState('');
 
   //handle bookmarkname change
   const handleBookmarkNameChange = e => setBookmarkName(e.target.value);
@@ -103,6 +102,7 @@ const DnDFlow = () => {
 
   // ADD버튼 누르면 저장할 예정
   const handleAdd = () =>{
+    console.log(cookies.get("Authorization"));
       axios.post("/api/bookmarks/3",
       {
         headers: {
