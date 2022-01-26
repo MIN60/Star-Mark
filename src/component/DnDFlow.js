@@ -18,6 +18,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Cookies } from 'react-cookie';
 
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 //모달 팝업창
 const styles = theme => ({
@@ -35,6 +36,15 @@ const initialElements = [
   },
 ];
 */
+
+const theme = createTheme({
+  palette: {
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#11cb5f',
+    },
+  },
+});
 
 let id = 0;
 const setId = () => `dndnode_${id++}`;
@@ -121,6 +131,8 @@ const DnDFlow = () => {
       }).catch(function(error) {
           console.log(error.response);
       });
+
+      //handleClose();
   }
 
   const handleDelete = () => { 
@@ -138,6 +150,12 @@ const DnDFlow = () => {
       }).catch(function(error) {
           console.log(error.response);
       });
+      handleClose();
+  }
+
+  const handleLink = () => {
+    window.open(link, '_blank');  //새 창으로 연결
+
   }
   
   const graphStyles = { background:"public/img/stars.png"};
@@ -171,8 +189,11 @@ const DnDFlow = () => {
                 <TextField label ="MEMO" type="text" name="Memo" value={memo} onChange={handleMemoChange}/><br/>
               </DialogContent>
               <DialogActions>
+                <ThemeProvider theme={theme}>
                 <Button variant="outlined" color="primary" onClick={handleDelete}>DELETE</Button>
+                <Button variant="outlined" color="secondary" onClick={handleLink}>LINK</Button>
                 <Button variant="contained" color="primary" onClick={handleAdd}>ADD</Button>
+                </ThemeProvider>
               </DialogActions>
             </Dialog> 
           : null}
