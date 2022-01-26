@@ -46,7 +46,7 @@
   position: static;
 }
 
-.react-flow__node{
+.react-flow__node-default{
   width: 92px;
   height: 92px;
   background-image: url('/public/img/stars.png') !important;
