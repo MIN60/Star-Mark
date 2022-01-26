@@ -3,7 +3,7 @@ import "./sidebar.css";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Cookies } from "react-cookie";
-
+import star1 from './star1.png';
 
 ////////
 const Sidebar = () => {
@@ -40,7 +40,7 @@ const Sidebar = () => {
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >
-        <img alt="star1" className="imgsize" src="img/stars.png"/>
+        <img alt="star1" className="imgsize" src={star1}/>
       </div>
 
       <div
@@ -48,7 +48,7 @@ const Sidebar = () => {
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >
-        <img alt="star1" className="imgsize" src="img/stars.png"/>
+        <img alt="star1" className="imgsize" src={star1}/>
       </div>
 
       <div
@@ -56,7 +56,7 @@ const Sidebar = () => {
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >
-        <img alt="star1" className="imgsize" src="img/stars.png"/>
+        <img alt="star1" className="imgsize" src={star1}/>
       </div>
 
       <div
@@ -64,7 +64,7 @@ const Sidebar = () => {
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >
-        <img alt="star1" className="imgsize" src="img/stars.png"/>
+        <img alt="star1" className="imgsize" src={star1}/>
       </div>
 
       <div
@@ -72,7 +72,7 @@ const Sidebar = () => {
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >
-        <img alt="star1" className="imgsize" src="img/stars.png" />
+        <img alt="star1" className="imgsize" src={star1} />
       </div>
 
       <div
@@ -80,7 +80,7 @@ const Sidebar = () => {
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >
-        <img alt="star1" className="imgsize" src="img/stars.png"/>
+        <img alt="star1" className="imgsize" src={star1}/>
       </div>
     </aside>
   );
