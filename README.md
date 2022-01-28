@@ -32,7 +32,7 @@
 ## 개발환경
 - React 
 - Node.js
-- Monggo DB
+- MongoDB
 
 ## 경험
 - three.js
